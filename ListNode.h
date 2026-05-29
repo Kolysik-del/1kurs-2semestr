@@ -2,8 +2,8 @@
 
 namespace collections {
     /**
-     * @brief Класс узла односвязного списка
-     * @tparam T тип данных, хранящихся в узле
+     * @brief РљР»Р°СЃСЃ СѓР·Р»Р° РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°
+     * @tparam T С‚РёРї РґР°РЅРЅС‹С…, С…СЂР°РЅСЏС‰РёС…СЃСЏ РІ СѓР·Р»Рµ
      */
     template<typename T>
     class ListNode {
@@ -12,8 +12,8 @@ namespace collections {
         ListNode<T>* nextNode;
 
         /**
-         * @brief Конструктор узла
-         * @param val - значение для хранения в узле
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СѓР·Р»Р°
+         * @param val - Р·РЅР°С‡РµРЅРёРµ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РІ СѓР·Р»Рµ
          */
         explicit ListNode(const T& val) : value(val), nextNode(nullptr) {}
     };
