@@ -7,8 +7,6 @@
 #include <limits>
 
 namespace geometry {
-    Parallelepiped::Parallelepiped() : a(0), b(0), c(0) {}
-
     Parallelepiped::Parallelepiped(const Point& p1, const Point& p2, const Point& p3) {
         // Вычисляем длины сторон из трех вершин
         a = p1.distanceTo(p2);
