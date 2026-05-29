@@ -8,8 +8,8 @@
 
 namespace collections {
     /**
-     * @brief Класс линейного односвязного списка
-     * @tparam T тип данных, хранящихся в списке
+     * @brief РљР»Р°СЃСЃ Р»РёРЅРµР№РЅРѕРіРѕ РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°
+     * @tparam T С‚РёРї РґР°РЅРЅС‹С…, С…СЂР°РЅСЏС‰РёС…СЃСЏ РІ СЃРїРёСЃРєРµ
      */
     template<typename T>
     class SinglyLinkedList {
@@ -19,8 +19,8 @@ namespace collections {
         size_t count;
 
         /**
-         * @brief Копирует содержимое другого списка
-         * @param other - список для копирования
+         * @brief РљРѕРїРёСЂСѓРµС‚ СЃРѕРґРµСЂР¶РёРјРѕРµ РґСЂСѓРіРѕРіРѕ СЃРїРёСЃРєР°
+         * @param other - СЃРїРёСЃРѕРє РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
          */
         void cloneFrom(const SinglyLinkedList<T>& other) {
             ListNode<T>* current = other.first;
@@ -32,13 +32,13 @@ namespace collections {
 
     public:
         /**
-         * @brief Конструктор по умолчанию
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
          */
         SinglyLinkedList() : first(nullptr), last(nullptr), count(0) {}
 
         /**
-         * @brief Конструктор со списком инициализации
-         * @param init - список инициализации
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕ СЃРїРёСЃРєРѕРј РёРЅРёС†РёР°Р»РёР·Р°С†РёРё
+         * @param init - СЃРїРёСЃРѕРє РёРЅРёС†РёР°Р»РёР·Р°С†РёРё
          */
         SinglyLinkedList(const std::initializer_list<T> init)
             : first(nullptr), last(nullptr), count(0) {
@@ -48,8 +48,8 @@ namespace collections {
         }
 
         /**
-         * @brief Конструктор копирования
-         * @param other - другой список
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+         * @param other - РґСЂСѓРіРѕР№ СЃРїРёСЃРѕРє
          */
         SinglyLinkedList(const SinglyLinkedList<T>& other)
             : first(nullptr), last(nullptr), count(0) {
@@ -57,8 +57,8 @@ namespace collections {
         }
 
         /**
-         * @brief Конструктор перемещения
-         * @param other - другой список
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
+         * @param other - РґСЂСѓРіРѕР№ СЃРїРёСЃРѕРє
          */
         SinglyLinkedList(SinglyLinkedList<T>&& other) noexcept
             : first(other.first), last(other.last), count(other.count) {
@@ -68,16 +68,16 @@ namespace collections {
         }
 
         /**
-         * @brief Деструктор
+         * @brief Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
          */
         ~SinglyLinkedList() {
             clear();
         }
 
         /**
-         * @brief Оператор присваивания копированием
-         * @param other - другой список
-         * @return ссылка на текущий объект
+         * @brief РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРїРёСЂРѕРІР°РЅРёРµРј
+         * @param other - РґСЂСѓРіРѕР№ СЃРїРёСЃРѕРє
+         * @return СЃСЃС‹Р»РєР° РЅР° С‚РµРєСѓС‰РёР№ РѕР±СЉРµРєС‚
          */
         SinglyLinkedList<T>& operator=(const SinglyLinkedList<T>& other) {
             if (this != &other) {
@@ -88,9 +88,9 @@ namespace collections {
         }
 
         /**
-         * @brief Оператор присваивания перемещением
-         * @param other - другой список
-         * @return ссылка на текущий объект
+         * @brief РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј
+         * @param other - РґСЂСѓРіРѕР№ СЃРїРёСЃРѕРє
+         * @return СЃСЃС‹Р»РєР° РЅР° С‚РµРєСѓС‰РёР№ РѕР±СЉРµРєС‚
          */
         SinglyLinkedList<T>& operator=(SinglyLinkedList<T>&& other) noexcept {
             if (this != &other) {
@@ -106,10 +106,10 @@ namespace collections {
         }
 
         /**
-         * @brief Оператор сдвига влево (вывод в поток)
-         * @param os - поток вывода
-         * @param list - список для вывода
-         * @return ссылка на поток вывода
+         * @brief РћРїРµСЂР°С‚РѕСЂ СЃРґРІРёРіР° РІР»РµРІРѕ (РІС‹РІРѕРґ РІ РїРѕС‚РѕРє)
+         * @param os - РїРѕС‚РѕРє РІС‹РІРѕРґР°
+         * @param list - СЃРїРёСЃРѕРє РґР»СЏ РІС‹РІРѕРґР°
+         * @return СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІС‹РІРѕРґР°
          */
         template<typename U>
         friend std::ostream& operator<<(std::ostream& os, const SinglyLinkedList<U>& list) {
@@ -118,10 +118,10 @@ namespace collections {
         }
 
         /**
-         * @brief Оператор сдвига вправо (ввод из потока)
-         * @param is - поток ввода
-         * @param list - список для ввода
-         * @return ссылка на поток ввода
+         * @brief РћРїРµСЂР°С‚РѕСЂ СЃРґРІРёРіР° РІРїСЂР°РІРѕ (РІРІРѕРґ РёР· РїРѕС‚РѕРєР°)
+         * @param is - РїРѕС‚РѕРє РІРІРѕРґР°
+         * @param list - СЃРїРёСЃРѕРє РґР»СЏ РІРІРѕРґР°
+         * @return СЃСЃС‹Р»РєР° РЅР° РїРѕС‚РѕРє РІРІРѕРґР°
          */
         template<typename U>
         friend std::istream& operator>>(std::istream& is, SinglyLinkedList<U>& list) {
@@ -135,8 +135,8 @@ namespace collections {
         }
 
         /**
-         * @brief Вставка элемента в конец списка
-         * @param val - значение элемента
+         * @brief Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
+         * @param val - Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
          */
         void push_back(const T& val) {
             ListNode<T>* newNode = new ListNode<T>(val);
@@ -151,8 +151,8 @@ namespace collections {
         }
 
         /**
-         * @brief Вставка элемента в начало списка
-         * @param val - значение элемента
+         * @brief Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
+         * @param val - Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
          */
         void push_front(const T& val) {
             ListNode<T>* newNode = new ListNode<T>(val);
@@ -167,13 +167,13 @@ namespace collections {
         }
 
         /**
-         * @brief Вставка элемента по индексу
-         * @param index - позиция для вставки
-         * @param val - значение элемента
+         * @brief Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РїРѕ РёРЅРґРµРєСЃСѓ
+         * @param index - РїРѕР·РёС†РёСЏ РґР»СЏ РІСЃС‚Р°РІРєРё
+         * @param val - Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
          */
         void insert(const size_t index, const T& val) {
             if (index > count) {
-                throw std::out_of_range("Индекс выходит за пределы списка");
+                throw std::out_of_range("РРЅРґРµРєСЃ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹ СЃРїРёСЃРєР°");
             }
 
             if (index == 0) {
@@ -197,11 +197,11 @@ namespace collections {
         }
 
         /**
-         * @brief Удаление элемента из конца списка
+         * @brief РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР°
          */
         void pop_back() {
             if (isEmpty()) {
-                throw std::out_of_range("Список пуст");
+                throw std::out_of_range("РЎРїРёСЃРѕРє РїСѓСЃС‚");
             }
 
             if (count == 1) {
@@ -209,7 +209,7 @@ namespace collections {
                 first = last = nullptr;
             }
             else {
-                // Найти предпоследний элемент
+                // РќР°Р№С‚Рё РїСЂРµРґРїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚
                 ListNode<T>* current = first;
                 while (current->nextNode != last) {
                     current = current->nextNode;
@@ -222,11 +222,11 @@ namespace collections {
         }
 
         /**
-         * @brief Удаление элемента из начала списка
+         * @brief РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
          */
         void pop_front() {
             if (isEmpty()) {
-                throw std::out_of_range("Список пуст");
+                throw std::out_of_range("РЎРїРёСЃРѕРє РїСѓСЃС‚");
             }
 
             if (count == 1) {
@@ -242,12 +242,12 @@ namespace collections {
         }
 
         /**
-         * @brief Удаление элемента по индексу
-         * @param index - позиция элемента
+         * @brief РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РїРѕ РёРЅРґРµРєСЃСѓ
+         * @param index - РїРѕР·РёС†РёСЏ СЌР»РµРјРµРЅС‚Р°
          */
         void erase(const size_t index) {
             if (index >= count) {
-                throw std::out_of_range("Индекс выходит за пределы списка");
+                throw std::out_of_range("РРЅРґРµРєСЃ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹ СЃРїРёСЃРєР°");
             }
 
             if (index == 0) {
@@ -271,9 +271,9 @@ namespace collections {
         }
 
         /**
-         * @brief Удаление элемента по значению (первое вхождение)
-         * @param val - значение для удаления
-         * @return true, если элемент найден и удален
+         * @brief РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РїРѕ Р·РЅР°С‡РµРЅРёСЋ (РїРµСЂРІРѕРµ РІС…РѕР¶РґРµРЅРёРµ)
+         * @param val - Р·РЅР°С‡РµРЅРёРµ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
+         * @return true, РµСЃР»Рё СЌР»РµРјРµРЅС‚ РЅР°Р№РґРµРЅ Рё СѓРґР°Р»РµРЅ
          */
         bool remove(const T& val) {
             int idx = indexOf(val);
@@ -285,9 +285,9 @@ namespace collections {
         }
 
         /**
-         * @brief Поиск элемента по значению
-         * @param val - значение для поиска
-         * @return индекс элемента или -1, если не найден
+         * @brief РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р° РїРѕ Р·РЅР°С‡РµРЅРёСЋ
+         * @param val - Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РїРѕРёСЃРєР°
+         * @return РёРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р° РёР»Рё -1, РµСЃР»Рё РЅРµ РЅР°Р№РґРµРЅ
          */
         int indexOf(const T& val) const {
             ListNode<T>* current = first;
@@ -303,13 +303,13 @@ namespace collections {
         }
 
         /**
-         * @brief Изменение элемента по индексу
-         * @param index - позиция элемента
-         * @param val - новое значение
+         * @brief РР·РјРµРЅРµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РїРѕ РёРЅРґРµРєСЃСѓ
+         * @param index - РїРѕР·РёС†РёСЏ СЌР»РµРјРµРЅС‚Р°
+         * @param val - РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ
          */
         void setAt(const size_t index, const T& val) {
             if (index >= count) {
-                throw std::out_of_range("Индекс выходит за пределы списка");
+                throw std::out_of_range("РРЅРґРµРєСЃ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹ СЃРїРёСЃРєР°");
             }
 
             ListNode<T>* current = first;
@@ -320,13 +320,13 @@ namespace collections {
         }
 
         /**
-         * @brief Оператор доступа по индексу (неконстантный)
-         * @param index - позиция элемента
-         * @return ссылка на элемент
+         * @brief РћРїРµСЂР°С‚РѕСЂ РґРѕСЃС‚СѓРїР° РїРѕ РёРЅРґРµРєСЃСѓ (РЅРµРєРѕРЅСЃС‚Р°РЅС‚РЅС‹Р№)
+         * @param index - РїРѕР·РёС†РёСЏ СЌР»РµРјРµРЅС‚Р°
+         * @return СЃСЃС‹Р»РєР° РЅР° СЌР»РµРјРµРЅС‚
          */
         T& operator[](const size_t index) {
             if (index >= count) {
-                throw std::out_of_range("Индекс выходит за пределы списка");
+                throw std::out_of_range("РРЅРґРµРєСЃ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹ СЃРїРёСЃРєР°");
             }
 
             ListNode<T>* current = first;
@@ -337,13 +337,13 @@ namespace collections {
         }
 
         /**
-         * @brief Оператор доступа по индексу (константный)
-         * @param index - позиция элемента
-         * @return константная ссылка на элемент
+         * @brief РћРїРµСЂР°С‚РѕСЂ РґРѕСЃС‚СѓРїР° РїРѕ РёРЅРґРµРєСЃСѓ (РєРѕРЅСЃС‚Р°РЅС‚РЅС‹Р№)
+         * @param index - РїРѕР·РёС†РёСЏ СЌР»РµРјРµРЅС‚Р°
+         * @return РєРѕРЅСЃС‚Р°РЅС‚РЅР°СЏ СЃСЃС‹Р»РєР° РЅР° СЌР»РµРјРµРЅС‚
          */
         const T& operator[](const size_t index) const {
             if (index >= count) {
-                throw std::out_of_range("Индекс выходит за пределы списка");
+                throw std::out_of_range("РРЅРґРµРєСЃ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹ СЃРїРёСЃРєР°");
             }
 
             ListNode<T>* current = first;
@@ -354,23 +354,23 @@ namespace collections {
         }
 
         /**
-         * @brief Получение размера списка
-         * @return количество элементов
+         * @brief РџРѕР»СѓС‡РµРЅРёРµ СЂР°Р·РјРµСЂР° СЃРїРёСЃРєР°
+         * @return РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ
          */
         size_t getCount() const {
             return count;
         }
 
         /**
-         * @brief Проверка, пуст ли список
-         * @return true, если список пуст
+         * @brief РџСЂРѕРІРµСЂРєР°, РїСѓСЃС‚ Р»Рё СЃРїРёСЃРѕРє
+         * @return true, РµСЃР»Рё СЃРїРёСЃРѕРє РїСѓСЃС‚
          */
         bool isEmpty() const {
             return count == 0;
         }
 
         /**
-         * @brief Очистка списка
+         * @brief РћС‡РёСЃС‚РєР° СЃРїРёСЃРєР°
          */
         void clear() {
             ListNode<T>* current = first;
@@ -384,8 +384,8 @@ namespace collections {
         }
 
         /**
-         * @brief Сериализация в строку
-         * @return строковое представление списка
+         * @brief РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ РІ СЃС‚СЂРѕРєСѓ
+         * @return СЃС‚СЂРѕРєРѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ СЃРїРёСЃРєР°
          */
         std::string asString() const {
             std::stringstream ss;
@@ -403,8 +403,8 @@ namespace collections {
         }
 
         /**
-         * @brief Получение указателя на начало списка
-         * @return указатель на первый элемент списка
+         * @brief РџРѕР»СѓС‡РµРЅРёРµ СѓРєР°Р·Р°С‚РµР»СЏ РЅР° РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
+         * @return СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°
          */
         ListNode<T>* getFirst() const {
             return first;
